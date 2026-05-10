@@ -1,5 +1,6 @@
 package strings
 
+// kmp implements the Knuth-Morris-Pratt algorithm for substring search. It returns the starting index of the first occurrence of the substring in the text, or -1 if the substring is not found.
 func kmp(text string, substring string) int {
 	pi := buildPiFunction(substring)
 
@@ -18,7 +19,6 @@ func kmp(text string, substring string) int {
 			}
 		}
 	}
-
 	if substringPos == len(substring) {
 		return textPos - substringPos
 	}
